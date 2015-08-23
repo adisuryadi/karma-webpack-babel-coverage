@@ -1,3 +1,4 @@
+/* eslint-env node */
 var path = require('path');
 var webpackConfig = require('./webpack.config');
 
@@ -8,6 +9,8 @@ function getWebpackConfig() {
   webpackConfig.entry = './src/index.tests.js';
 
   if (coverage) {
+    var eslintLoader = loaders.pop();
+
     loaders.push({
       test: /^((?!(tests|mocks)\.).)*$/i, // all files not containing "tests." or "mocks."
       include: __dirname + '/src/',
@@ -19,6 +22,8 @@ function getWebpackConfig() {
       include: __dirname + '/src/',
       loaders: ['babel'],
     });
+
+    loaders.push(eslintLoader);
   }
   return webpackConfig;
 }

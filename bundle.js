@@ -57,11 +57,11 @@
 	var defaultGreet = $status.innerHTML;
 
 	$input.addEventListener('keyup', function (e) {
-	    if (e.target.value) {
-	        $status.innerHTML = _greet2['default'].sayHi(e.target.value);
-	        return;
-	    }
-	    $status.innerHTML = defaultGreet;
+	  if (e.target.value) {
+	    $status.innerHTML = _greet2['default'].sayHi(e.target.value);
+	    return;
+	  }
+	  $status.innerHTML = defaultGreet;
 	});
 
 /***/ },
@@ -71,17 +71,17 @@
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	exports.sayHi = sayHi;
 	exports.sayGoodbye = sayGoodbye;
 
 	function sayHi(name) {
-	    return "Hi " + name + "!";
+	  return "Hi " + name + "!";
 	}
 
 	function sayGoodbye(name) {
-	    return "Goodbye " + name + "!";
+	  return "Goodbye " + name + "!";
 	}
 
 	exports["default"] = { sayHi: sayHi, sayGoodbye: sayGoodbye };
